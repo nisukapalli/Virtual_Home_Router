@@ -1,2 +1,4 @@
 # Virtual_Home_Router
-A simulation of a virtual home router implemented with BSD sockets
+A simulation of a virtual home router implemented with BSD sockets. A home router uses NAT/NAPT to separate the Internet (WAN) from the home network (LAN). Nodes in the LAN side are generally 1 hop away from the home router, and thus there is no prefix aggregation. Packets with unknown destination IP addresses are forwarded to the WAN side by default.
+
+This program serves as a TCP server and listens to connections from simulated hosts. Each connection represents a link to the virtual router. Hosts are simulated by processes, and wired connections are simulated by TCP connections. The first connection is the WAN port, and others are LAN ports. Implements LAN packet forwarding, and NAPT with static and dynamic port allocation. Maximum processing delay of 500 ms for each packet.
